@@ -1,14 +1,25 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using personapi_dotnet.Models.Entities;
+using personapi_dotnet.Models.NewFolder;
 
 namespace personapi_dotnet.Controllers
 {
     public class PersonaController : Controller
     {
-        // GET: PersonaController
-        public ActionResult Index()
+        private readonly PersonaDbContext _personaDbContext;
+
+        public PersonaController(PersonaDbContext personaDbContext)
         {
-            return View();
+            _personaDbContext = personaDbContext;
+        }
+
+
+        // GET: PersonaController
+        public async Task<ActionResult> Index()
+        {
+            return View(await _personaDbContext.Personas.ToListAsync());
         }
 
         // GET: PersonaController/Details/5
@@ -26,10 +37,20 @@ namespace personapi_dotnet.Controllers
         // POST: PersonaController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(PersonaViewModel model)
         {
             try
             {
+                var persona = new Persona()
+                {
+                    Cc = model.Cc,
+                    Nombre = model.Nombre,
+                    Apellido = model.Apellido,
+                    Genero = model.Genero,
+                    Edad = model.Edad
+                };
+                _personaDbContext.Add(persona);
+                await _personaDbContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -39,19 +60,42 @@ namespace personapi_dotnet.Controllers
         }
 
         // GET: PersonaController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: PersonaController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Edit(int id)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var persona_edit = _personaDbContext.Personas.Find(id);
+                if (persona_edit != null)
+                {
+                    return View(persona_edit);
+                }
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // POST: PersonaController/Edit/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit(Persona model)
+        {
+            try
+            {
+                var persona_edit = _personaDbContext.Personas.Find(model.Cc);
+                if (persona_edit != null)
+                {
+
+                    _personaDbContext.Remove(persona_edit);
+                    _personaDbContext.Add(model);
+                    //_personaDbContext.Add(persona_edit);
+                    await _personaDbContext.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                return View();
             }
             catch
             {
