@@ -388,3 +388,5 @@ C:\Users\willi\Documents\Arquitectura\Laboratorio1\2\personapi-dotnet\personapi-
 C:\Users\willi\Documents\Arquitectura\Laboratorio1\2\personapi-dotnet\personapi-dotnet\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\willi\Documents\Arquitectura\Laboratorio1\2\personapi-dotnet\personapi-dotnet\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\willi\Documents\Arquitectura\Laboratorio1\2\personapi-dotnet\personapi-dotnet\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\juanf\source\repos\personapi-dotnet\personapi-dotnet\obj\Debug\net8.0\personapi-dotnet.sourcelink.json
+C:\Users\juanf\source\repos\personapi-dotnet\personapi-dotnet\obj\Debug\net8.0\personapi-dotnet.MvcApplicationPartsAssemblyInfo.cs
