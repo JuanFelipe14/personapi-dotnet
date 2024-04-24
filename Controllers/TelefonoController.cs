@@ -63,19 +63,44 @@ namespace personapi_dotnet.Controllers
         }
 
         // GET: TelefonoController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(string id)
         {
-            return View();
+            try
+            {
+                ViewBag.Duenios = new SelectList(_personaDbContext.Personas, "Cc", "Nombre");
+                var telefono_edit = _personaDbContext.Telefonos.Find(id);
+                if (telefono_edit != null)
+                {
+                    return View(telefono_edit);
+                }
+                return View();
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // POST: TelefonoController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Edit(Telefono model)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                ViewBag.Duenios = new SelectList(_personaDbContext.Personas, "Cc", "Nombre");
+                var telefono_edit = _personaDbContext.Telefonos.Find(model.Num);
+                var persona_edit = _personaDbContext.Personas.Find(model.Duenio);
+                if (telefono_edit != null)
+                {
+                    _personaDbContext.Telefonos.Remove(telefono_edit);
+                    model.DuenioNavigation = persona_edit;
+                    _personaDbContext.Telefonos.Add(model);
+                    //_personaDbContext.Add(persona_edit);
+                    await _personaDbContext.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                return View();
             }
             catch
             {
@@ -84,24 +109,32 @@ namespace personapi_dotnet.Controllers
         }
 
         // GET: TelefonoController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
+            var telefono_delete = _personaDbContext.Telefonos.Find(id);
+            if (telefono_delete != null)
+            {
+                return View(telefono_delete);
+            }
             return View();
         }
 
         // POST: TelefonoController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<ActionResult> Delete(Telefono model)
         {
             try
             {
+                _personaDbContext.Telefonos.Remove(model);
+                await _personaDbContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
                 return View();
             }
+
         }
     }
 }
