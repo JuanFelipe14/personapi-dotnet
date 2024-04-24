@@ -25,6 +25,11 @@ namespace personapi_dotnet.Controllers
         // GET: PersonaController/Details/5
         public ActionResult Details(int id)
         {
+            var persona = _personaDbContext.Personas.Find(id);
+            if (persona != null)
+            {
+                return View(persona);
+            }
             return View();
         }
 
@@ -106,16 +111,24 @@ namespace personapi_dotnet.Controllers
         // GET: PersonaController/Delete/5
         public ActionResult Delete(int id)
         {
+            var persona_delete = _personaDbContext.Personas.Find(id);
+            if (persona_delete != null)
+            {
+                return View(persona_delete);
+            }
+
             return View();
         }
 
         // POST: PersonaController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<ActionResult> Delete(Persona model)
         {
             try
             {
+                _personaDbContext.Personas.Remove(model);
+                await _personaDbContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch

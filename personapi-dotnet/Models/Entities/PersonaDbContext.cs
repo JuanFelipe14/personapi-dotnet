@@ -31,7 +31,7 @@ public partial class PersonaDbContext : DbContext
     {
         modelBuilder.Entity<Estudio>(entity =>
         {
-            entity.HasKey(e => e.CcPer);
+            entity.HasKey(e => new {e.CcPer, e.IdProf});
 
             entity.ToTable("estudios");
 
