@@ -26,6 +26,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\willi\Documents\Arquitectura\Laboratorio1\nuevo_proyecto\personapi-dotnet
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/willi/Documents/Arquitectura/Laboratorio1/nuevo_proyecto/personapi-dotnet/Views/Estudio/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/willi/Documents/Arquitectura/Laboratorio1/nuevo_proyecto/personapi-dotnet/Views/Estudio/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpb1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/willi/Documents/Arquitectura/Laboratorio1/nuevo_proyecto/personapi-dotnet/Views/Estudio/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/willi/Documents/Arquitectura/Laboratorio1/nuevo_proyecto/personapi-dotnet/Views/Estudio/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/willi/Documents/Arquitectura/Laboratorio1/nuevo_proyecto/personapi-dotnet/Views/Estudio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/willi/Documents/Arquitectura/Laboratorio1/nuevo_proyecto/personapi-dotnet/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
