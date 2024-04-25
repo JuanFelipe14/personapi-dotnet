@@ -37,7 +37,6 @@ namespace personapi_dotnet.Controllers
         // GET: EstudioController/Create
         public ActionResult Create()
         {
-            ViewBag.Personas = new SelectList(_personaDbContext.Personas, "Cc", "Nombre");
             ViewBag.Profesiones = new SelectList(_personaDbContext.Profesions, "Id", "Nom");
             return View();
         }
@@ -64,8 +63,8 @@ namespace personapi_dotnet.Controllers
                 await _personaDbContext.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.Personas = new SelectList(_personaDbContext.Personas, "Cc", "Nombre");
-            ViewBag.Profesiones = new SelectList(_personaDbContext.Profesions, "Id", "Nom");
+            ViewBag.Personas = new SelectList(_personaDbContext.Personas, "Cc", "Nombre", model.CcPer);
+            ViewBag.Profesiones = new SelectList(_personaDbContext.Profesions, "Id", "Nom", model.IdProf);
             return View();
         }
 
@@ -97,8 +96,8 @@ namespace personapi_dotnet.Controllers
         {
             try
             {
-                ViewBag.Personas = new SelectList(_personaDbContext.Personas, "Cc", "Nombre");
-                ViewBag.Profesiones = new SelectList(_personaDbContext.Profesions, "Id", "Nom");
+                ViewBag.Personas = new SelectList(_personaDbContext.Personas, "Cc", "Nombre", model.CcPer);
+                ViewBag.Profesiones = new SelectList(_personaDbContext.Profesions, "Id", "Nom", model.IdProf);
 
                 var estudio_edit = _personaDbContext.Estudios.Find(model.IdProf, model.CcPer);
                 var persona_edit = _personaDbContext.Personas.Find(model.CcPer);

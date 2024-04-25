@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\willi\\Documents\\Arquitectura\\Laboratorio1\\nuevo_proyecto\\personapi-dotnet\\personapi-dotnet.csproj": {}
+    "C:\\Users\\willi\\Documents\\Arquitectura\\Laboratorio1\\nuevo_proyecto_2\\personapi-dotnet\\personapi-dotnet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\willi\\Documents\\Arquitectura\\Laboratorio1\\nuevo_proyecto\\personapi-dotnet\\personapi-dotnet.csproj": {
+    "C:\\Users\\willi\\Documents\\Arquitectura\\Laboratorio1\\nuevo_proyecto_2\\personapi-dotnet\\personapi-dotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\willi\\Documents\\Arquitectura\\Laboratorio1\\nuevo_proyecto\\personapi-dotnet\\personapi-dotnet.csproj",
+        "projectUniqueName": "C:\\Users\\willi\\Documents\\Arquitectura\\Laboratorio1\\nuevo_proyecto_2\\personapi-dotnet\\personapi-dotnet.csproj",
         "projectName": "personapi-dotnet",
-        "projectPath": "C:\\Users\\willi\\Documents\\Arquitectura\\Laboratorio1\\nuevo_proyecto\\personapi-dotnet\\personapi-dotnet.csproj",
+        "projectPath": "C:\\Users\\willi\\Documents\\Arquitectura\\Laboratorio1\\nuevo_proyecto_2\\personapi-dotnet\\personapi-dotnet.csproj",
         "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\willi\\Documents\\Arquitectura\\Laboratorio1\\nuevo_proyecto\\personapi-dotnet\\obj\\",
+        "outputPath": "C:\\Users\\willi\\Documents\\Arquitectura\\Laboratorio1\\nuevo_proyecto_2\\personapi-dotnet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -71,6 +71,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.Core": {
+              "target": "Package",
+              "version": "[5.6.0, )"
             }
           },
           "imports": [
